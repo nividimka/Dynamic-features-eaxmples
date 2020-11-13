@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".NavigationDynamicActivity"/>
-        <activity android:name=".NavigationFirstActivityn"/>
+        <activity android:name=".NavigationFirstActivity"/>
+        <activity android:name=".progress.DefaultProgressActivity"/>
     </application>
 
 </manifest>

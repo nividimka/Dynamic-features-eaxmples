@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">My Application</string>
     <string name="title_dynamicfeature1">Dynamic feature module</string>
+    <string name="title_dynamicfeatureondemand">Dynamic feature ondemand</string>
 </resources>

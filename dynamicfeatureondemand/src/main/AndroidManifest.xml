@@ -1,19 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:dist="http://schemas.android.com/apk/distribution"
-    package="com.dkgroup.dynamicfeature1">
+    package="com.dkgroup.dynamicfeatureondemand">
 
     <dist:module
         dist:instant="false"
-        dist:title="@string/title_dynamicfeature1">
+        dist:title="@string/title_dynamicfeatureondemand">
         <dist:delivery>
-            <dist:install-time>
-                <dist:conditions>
-                    <dist:user-countries dist:exclude="true">
-                        <dist:country dist:code="KZ"/>
-                    </dist:user-countries>
-                </dist:conditions>
-            </dist:install-time>
+            <dist:on-demand />
         </dist:delivery>
         <dist:fusing dist:include="true" />
     </dist:module>
