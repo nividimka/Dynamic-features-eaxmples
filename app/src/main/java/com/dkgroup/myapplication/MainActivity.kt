@@ -1,13 +1,14 @@
 package com.dkgroup.myapplication
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.dkgroup.myapplication.BuildConfig
 import com.dkgroup.myapplication.progress.DefaultProgressActivity
 import com.google.android.play.core.splitinstall.SplitInstallManagerFactory
+import com.dkgroup.myapplication.progress.BaseSplitActivity
 
-class MainActivity : AppCompatActivity(R.layout.activity_main) {
+class MainActivity : BaseSplitActivity(R.layout.activity_main) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         findViewById<View>(R.id.dynamic1).setOnClickListener {
@@ -27,7 +28,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
             intent.setClassName(
                 BuildConfig.APPLICATION_ID,
                 "com.dkgroup.dynamicfeatureondemand.DynamicFeatureActivity"
-            );
+            )
             if (SplitInstallManagerFactory.create(this).installedModules.contains("dynamicfeatureondemand")) {
                 startActivity(intent)
             } else {

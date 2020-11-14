@@ -1,5 +1,5 @@
 package com.dkgroup.dynamicfeatureondemand
 
-import androidx.appcompat.app.AppCompatActivity
+import com.dkgroup.myapplication.progress.BaseSplitActivity
 
-class DynamicFeatureActivity : AppCompatActivity(R.layout.activity_dynamic_ondemand)
+class DynamicFeatureActivity : BaseSplitActivity(R.layout.activity_dynamic_ondemand)

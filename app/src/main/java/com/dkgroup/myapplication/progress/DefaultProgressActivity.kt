@@ -1,6 +1,5 @@
 package com.dkgroup.myapplication.progress
 
-import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -9,16 +8,15 @@ import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
-import com.dkgroup.myapplication.BuildConfig
 import com.dkgroup.myapplication.R
+import com.dkgroup.myapplication.BuildConfig
 import com.google.android.play.core.splitinstall.SplitInstallManager
 import com.google.android.play.core.splitinstall.SplitInstallManagerFactory
 import com.google.android.play.core.splitinstall.SplitInstallRequest
 import com.google.android.play.core.splitinstall.SplitInstallStateUpdatedListener
 import com.google.android.play.core.splitinstall.model.SplitInstallSessionStatus
 
-class DefaultProgressActivity : AppCompatActivity(R.layout.activity_progress) {
+class DefaultProgressActivity : BaseSplitActivity(R.layout.activity_progress) {
     companion object {
         const val MODULE_NAME = "MODULE_NAME"
         private const val PROGRESS_MAX = 100
@@ -60,6 +58,7 @@ class DefaultProgressActivity : AppCompatActivity(R.layout.activity_progress) {
                 }
                 SplitInstallSessionStatus.INSTALLED -> {
                     action.visibility = View.VISIBLE
+                    progressBar.visibility = View.GONE
                     progressTitle.text = "Модуль загружен"
                 }
                 SplitInstallSessionStatus.INSTALLING -> showProgress(
@@ -104,9 +103,10 @@ class DefaultProgressActivity : AppCompatActivity(R.layout.activity_progress) {
             val intent = Intent()
             intent.setClassName(
                 BuildConfig.APPLICATION_ID,
-                CLASS_NAME
-            );
+                className
+            )
             startActivity(intent)
+            finish()
         }
     }
 

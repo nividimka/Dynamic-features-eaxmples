@@ -2,10 +2,9 @@ package com.dkgroup.myapplication
 
 import android.os.Bundle
 import android.view.View
-import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
+import com.dkgroup.myapplication.progress.BaseSplitActivity
 
-class NavigationFirstActivity : AppCompatActivity(R.layout.activity_navigation_first){
+class NavigationFirstActivity : BaseSplitActivity(R.layout.activity_navigation_first){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         findViewById<View>(R.id.button).setOnClickListener {view->
